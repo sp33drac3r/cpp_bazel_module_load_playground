@@ -1,0 +1,25 @@
+cc_library(
+    name = "lib1",
+    srcs = ["lib1.cc"],
+    deps = [
+        "@riley-riley//:riley"
+    ],    
+)
+
+cc_library(
+    name = "lib2",
+    srcs = ["lib2.cc"],
+    deps = [
+        "@riley-celebrate//:celebrate"
+    ],    
+)
+
+cc_binary(
+    name = "main",
+    srcs = ["main.cc"],
+    deps = [
+        ":lib1",
+        ":lib2",
+    ],
+    linkstatic = True,
+)
